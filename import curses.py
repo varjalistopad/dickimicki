@@ -27,7 +27,7 @@ def draw_dick(win, angle):
     h = len(dick)
     w = max(len(line) for line in dick)
     cx, cy = w // 2, h // 2
-    # Увеличиваем offset_y на 4 строки
+    # Увеличиваем offset_y на 8 строки
     offset_x, offset_y = (curses.COLS - w) // 2, (curses.LINES - h) // 10 + 8
 
     for y in range(h):
@@ -44,7 +44,7 @@ def draw_dick(win, angle):
                     try:
                         win.addch(ny, nx, char)
                     except curses.error:
-                        pass  # ignore all errors gracefully
+                        pass  # игнорим ошибки как бывшего
 
 def main(stdscr):
     curses.curs_set(0)
